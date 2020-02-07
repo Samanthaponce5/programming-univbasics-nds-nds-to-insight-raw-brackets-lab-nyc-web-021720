@@ -19,7 +19,7 @@ j += 1
      i += 1 
   arr << name_total
     end
-puts arr.to_h
+ arr.to_h
   end
 
 # Remember, it's always OK to pretty print what you get *in* to make sure
