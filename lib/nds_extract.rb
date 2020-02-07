@@ -3,23 +3,24 @@ require 'directors_database'
 
 
 def directors_totals(nds)
-result = []
-total = 0 
-i = 0 
-  while i < nds.length 
-    j = 0
+  arr = []
+  i = 0 
+  while i < nds.length
     names = nds[i][:name]
-     movie =  nds[i][:movies]
-    while j < nds[i][:movies].length
-      total += movie[j][:worldwide_gross]
-    j += 1
+    movie = nds[i][:movies]
+    total = 0 
+    j = 0 
+     while j < movie.length
+total += movie[j][:worldwide_gross]
+name_total = names, total
+j += 1
+
+     end
+     i += 1 
+  arr << name_total
     end
-    name_total =  names, total
-    i += 1 
+puts arr.to_h
   end
- result << name_total
- result.to_h
-end
 
 # Remember, it's always OK to pretty print what you get *in* to make sure
 # that you know what you're starting with!
